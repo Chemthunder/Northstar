@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ICN",
+    " /C",
+    "/ I"
+  ],
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "/": "minecraft:iron_bars",
+    "N": [
+      "minecraft:netherite_sword",
+      "minecraft:diamond_sword"
+    ],
+    "C": "northstar:lumium_ingot"
+  },
+  "result": {
+    "id": "northstar:steelbound_glaive",
+    "count": 1
+  },
+  "show_notification": false
+}

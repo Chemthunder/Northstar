@@ -1,0 +1,8 @@
+{
+  "description": {
+    "translate": "jukebox_song.northstar.terraformal"
+  },
+  "comparator_output": 11,
+  "length_in_seconds": 61,
+  "sound_event": "northstar:music.terraformal"
+}

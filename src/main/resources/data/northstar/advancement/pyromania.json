@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "northstar:lumium_spark"
+    },
+    "title": {
+      "translate": "advancement.northstar.pyromania"
+    },
+    "description": {
+      "translate": "advancement.northstar.pyromania.desc"
+    },
+    "frame": "goal"
+  },
+  "parent": "northstar:huntsman",
+  "criteria": {
+    "obtain_spark": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "northstar:lumium_spark"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "description": {
+    "translate": "jukebox_song.northstar.bvo"
+  },
+  "comparator_output": 15,
+  "length_in_seconds": 153,
+  "sound_event": "northstar:music.bvo"
+}

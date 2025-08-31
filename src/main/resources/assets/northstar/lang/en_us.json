@@ -1,0 +1,62 @@
+{
+  "item.northstar.steelbound_glaive": "Steelbound Glaive",
+
+  "item.northstar.crossfire_assembly": "Crossfire Assembly",
+
+  "item.northstar.crossfire_assembly.charged": "Charged",
+  "item.northstar.crossfire_assembly.uncharged": "Uncharged",
+
+  "effect.northstar.ensteamed": "Ensteamed",
+  "death.attack.steamed": "%1$s was burnt to a crisp",
+  "death.attack.steamed.player": "%1$s was burnt to a crisp by %2$s",
+
+  "block.northstar.soulsteel_generator": "Soulsteel Generator",
+  "block.northstar.lumium_block": "Lumium Block",
+
+  "item.northstar.lumium_ingot": "Lumium Ingot",
+
+  "item.northstar.crossfire_interface": "Crossfire Interface",
+
+  "item.northstar.terraformal_disc": "Music Disc",
+  "jukebox_song.northstar.terraformal": "Intel - Terraformal // Set and Stone",
+
+  "item.northstar.bergentruck_disc": "Music Disc",
+  "jukebox_song.northstar.bergentruck": "Eanna_ - Bergentruck ULTIMATE REMIX",
+
+  "item.northstar.lumium_spark": "Lumium Spark",
+  "item.northstar.lumium_spark.desc": "Main hand right click to summon a fireball, off hand to summon a wind charge",
+
+  "item.northstar.bvo_disc": "Music Disc",
+  "jukebox_song.northstar.bvo": "4kio - Butcher Vanity OVERCOOKED",
+
+  "item.northstar.spamton_disc": "THE OG BIGSHOT",
+  "jukebox_song.northstar.bigshot": "Toby Fox - Bigshot",
+
+  "item.northstar.blackknife_disc": "Music Disc",
+  "jukebox_song.northstar.blackknife": "Toby Fox - Black Knife",
+
+  "northstar.subtitles.music.terraformal": "Terraformal Plays",
+  "northstar.subtitles.music.bergentruck": "THE KING'S CHARIOT CANNOT BE STOPPED!",
+  "northstar.subtitles.music.bvo": ":3",
+  "northstar.subtitles.music.bigshot": "LET ME [FREEDOM] FROM MY [CAGE]",
+  "northstar.subtitles.music.blackknife": "THE ROARING KNIGHT IS BALLING",
+
+  "northstar.subtitles.item.spark_load": "Loads Lumium Spark",
+
+  "itemGroup.northstar": "Northstar",
+
+  "death.attack.throngled": "%1$s's soul was reaped in two",
+  "death.attack.throngled.player": "%1$s's soul was reaped in two whilst trying to evade %2$s",
+
+  "advancement.northstar.root": "Northstar",
+  "advancement.northstar.root.desc": "Prometheus and Shit",
+
+  "advancement.northstar.pyromania": "'Murica",
+  "advancement.northstar.pyromania.desc": "Obtain a Lumium Spark",
+
+  "advancement.northstar.hunt": "Huntsman",
+  "advancement.northstar.hunt.desc": "Obtain a Steelbound Glaive",
+
+
+  "text.spark.overload": "Cannot use both at the same time!"
+}
