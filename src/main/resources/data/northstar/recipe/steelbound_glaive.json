@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "ICN",
-    " /C",
+    " BC",
     "/ I"
   ],
   "key": {
@@ -12,7 +12,8 @@
       "minecraft:netherite_sword",
       "minecraft:diamond_sword"
     ],
-    "C": "northstar:lumium_ingot"
+    "C": "northstar:lumium_ingot",
+    "B": "northstar:machine_oil_bottle"
   },
   "result": {
     "id": "northstar:steelbound_glaive",

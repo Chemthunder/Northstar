@@ -5,13 +5,13 @@ import dev.chemthunder.northstar.item.FlareItem;
 import dev.chemthunder.northstar.item.GlaiveItem;
 import dev.chemthunder.northstar.item.OilItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
-import javax.tools.Tool;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -25,9 +25,10 @@ public interface NorthItems {
             .fireproof()
     ));
 
-    Item STEELBOUND_GLAIVE = create("steelbound_glaive", new GlaiveItem(ToolMaterials.NETHERITE, new Item.Settings()
+    Item STEELBOUND_GLAIVE = create("steelbound_glaive", new GlaiveItem(ToolMaterials.NETHERITE,  new Item.Settings()
             .maxCount(1)
             .fireproof()
+            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.3f))
     ));
 
     Item TERRAFORMAL_DISC = create("terraformal_disc", new Item( new Item.Settings()
@@ -57,19 +58,15 @@ public interface NorthItems {
             .maxCount(16)
     ));
 
-
-
-
     static void initialize() {
-        ITEMS.forEach((item, id) -> Registry.register(Registries.ITEM, id, item));
+        ITEMS.keySet().forEach(item -> Registry.register(Registries.ITEM, ITEMS.get(item), item));
 
         modifyItemNameColor(STEELBOUND_GLAIVE, 0x9999999);
         modifyItemNameColor(LUMIUM_SPARK, 0x639cff);
     }
 
-    static Item create(String name, Item item) {
-        return Registry.register(Registries.ITEM, Northstar.id(name), item);
+    private static Item create(String name, Item item) {
+        ITEMS.put(item, Northstar.id(name));
+        return item;
     }
-
-
 }

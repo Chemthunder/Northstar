@@ -38,8 +38,6 @@
   "northstar.subtitles.music.terraformal": "Terraformal Plays",
   "northstar.subtitles.music.bergentruck": "THE KING'S CHARIOT CANNOT BE STOPPED!",
   "northstar.subtitles.music.bvo": ":3",
-  "northstar.subtitles.music.bigshot": "LET ME [FREEDOM] FROM MY [CAGE]",
-  "northstar.subtitles.music.blackknife": "THE ROARING KNIGHT IS BALLING",
 
   "northstar.subtitles.item.spark_load": "Loads Lumium Spark",
 
@@ -57,6 +55,7 @@
   "advancement.northstar.hunt": "Huntsman",
   "advancement.northstar.hunt.desc": "Obtain a Steelbound Glaive",
 
+  "text.spark.overload": "Cannot use both at the same time!",
 
-  "text.spark.overload": "Cannot use both at the same time!"
+  "item.northstar.machine_oil_bottle": "Bottle of Machine Oil"
 }
