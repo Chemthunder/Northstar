@@ -11,10 +11,11 @@ import net.minecraft.item.Items;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 
-public class OilItem extends Item {
-    public OilItem(Settings settings) {
+public class EnsculkedLumiumItem extends Item {
+    public EnsculkedLumiumItem(Settings settings) {
         super(settings);
     }
+
     public ActionResult useOnBlock(ItemUsageContext context) {
         BlockState state = context.getWorld().getBlockState(context.getBlockPos());
         PlayerEntity user = context.getPlayer();
@@ -22,16 +23,15 @@ public class OilItem extends Item {
             ItemStack stack = user.getMainHandStack();
             ItemStack offStack = user.getOffHandStack();
 
-            if (stack.isOf(Items.COPPER_INGOT) && offStack.isOf(NorthItems.MACHINE_OIL_BOTTLE)) {
+            if (stack.isOf(NorthItems.ENSCULKED_LUMIUM)) {
                 offStack.decrement(1);
                 stack.decrement(1);
-                user.giveItemStack(NorthItems.AMETHYSTINE_LUMIUM.getDefaultStack());
-                user.playSound(SoundEvents.ITEM_HONEY_BOTTLE_DRINK, 0.8F, 1.0F);
+                user.giveItemStack(NorthItems.LUMIUM_INGOT.getDefaultStack());
+                user.playSound(SoundEvents.UI_STONECUTTER_TAKE_RESULT, 0.8F, 1.0F);
             }
             return ActionResult.SUCCESS;
         }
         return super.useOnBlock(context);
     }
-
 
 }

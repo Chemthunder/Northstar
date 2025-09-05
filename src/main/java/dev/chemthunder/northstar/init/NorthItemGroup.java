@@ -33,5 +33,7 @@ public interface NorthItemGroup {
         itemGroup.add(NorthItems.BVO_DISC);
         itemGroup.add(NorthItems.MACHINE_OIL_BOTTLE);
         itemGroup.add(NorthItems.GRACE);
+        itemGroup.add(NorthItems.ENSCULKED_LUMIUM);
+        itemGroup.add(NorthItems.AMETHYSTINE_LUMIUM);
     }
 }

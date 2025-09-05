@@ -76,7 +76,7 @@ public class GraceItem extends SwordItem implements CustomHitParticleItem, Custo
             user.sendMessage(Text.translatable("text.grace.change_weather_fail").withColor(0x3b5169).formatted(Formatting.ITALIC), true);
         }
 
-        // else
+        // extra
         world.playSound(user, user.getBlockPos(), NorthSounds.STORM_RING, SoundCategory.MASTER);
 
         return TypedActionResult.success(user.getStackInHand(hand), world.isClient());

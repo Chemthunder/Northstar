@@ -61,5 +61,8 @@
   "death.attack.grace_kill": "%1$s beheld the sight of fate",
   "item.northstar.grace.desc": "The light of heaven is an inconceivable thing. \nPity nobody will experience true bliss by our hands.",
 
-  "text.grace.change_weather": "The world arises in a symphony of battle"
+  "text.grace.change_weather": "The world arises in a symphony of battle",
+
+  "item.northstar.ensculked_lumium": "Ensculked Lumium",
+  "item.northstar.amethystine_lumium": "Amethystine Lumium"
 }

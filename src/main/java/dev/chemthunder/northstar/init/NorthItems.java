@@ -1,10 +1,7 @@
 package dev.chemthunder.northstar.init;
 
 import dev.chemthunder.northstar.Northstar;
-import dev.chemthunder.northstar.item.FlareItem;
-import dev.chemthunder.northstar.item.GlaiveItem;
-import dev.chemthunder.northstar.item.GraceItem;
-import dev.chemthunder.northstar.item.OilItem;
+import dev.chemthunder.northstar.item.*;
 import net.acoyt.acornlib.api.item.AcornItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
@@ -51,6 +48,16 @@ public interface NorthItems {
             .jukeboxPlayable(NorthJukeboxSongs.BIGSHOT)
     ));
 
+    Item ENSCULKED_LUMIUM = create("encsulked_lumium", new EnsculkedLumiumItem(new AcornItemSettings()
+            .showHand()
+            .fireproof()
+    ));
+
+    Item AMETHYSTINE_LUMIUM = create("amethystine_lumium", new Item(new AcornItemSettings()
+            .showHand()
+            .fireproof()
+    ));
+
     Item MACHINE_OIL_BOTTLE = create("machine_oil_bottle", new OilItem(new Item.Settings()
             .maxCount(16)
     ));
@@ -61,7 +68,6 @@ public interface NorthItems {
             .maxCount(1)
             .attributeModifiers(SwordItem.createAttributeModifiers(NorthToolMaterials.DIVINE, 7, -2.6f))
     ));
-
     
 
     static void initialize() {
