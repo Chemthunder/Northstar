@@ -9,18 +9,17 @@ import net.minecraft.registry.RegistryKeys;
 
 public interface NorthDamageTypes {
     RegistryKey<DamageType> STEAMED = of("steamed");
-    RegistryKey<DamageType> SPARKED = of("sparked");
-    RegistryKey<DamageType> THRONGLED = of("throngled");
+    RegistryKey<DamageType> GRACE_KILL = of("grace_kill");
+    RegistryKey<DamageType> GLAIVE_KILL = of("glaive_kill");
 
     static DamageSource steamed(LivingEntity entity) {
         return entity.getDamageSources().create(STEAMED); }
 
-    static DamageSource sparked(LivingEntity entity) {
-        return entity.getDamageSources().create(SPARKED); }
+    static DamageSource grace_kill(LivingEntity entity) {
+        return entity.getDamageSources().create(GRACE_KILL); }
 
-    static DamageSource throngled(LivingEntity entity) {
-        return entity.getDamageSources().create(THRONGLED); }
-
+    static DamageSource glaive_kill(LivingEntity entity) {
+        return entity.getDamageSources().create(GLAIVE_KILL); }
 
     private static RegistryKey<DamageType> of(String name) {
         return RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Northstar.id(name));

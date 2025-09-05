@@ -3,10 +3,11 @@ package dev.chemthunder.northstar.init;
 import dev.chemthunder.northstar.Northstar;
 import dev.chemthunder.northstar.item.FlareItem;
 import dev.chemthunder.northstar.item.GlaiveItem;
+import dev.chemthunder.northstar.item.GraceItem;
 import dev.chemthunder.northstar.item.OilItem;
+import net.acoyt.acornlib.api.item.AcornItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -25,22 +26,16 @@ public interface NorthItems {
             .fireproof()
     ));
 
-    Item STEELBOUND_GLAIVE = create("steelbound_glaive", new GlaiveItem(ToolMaterials.NETHERITE,  new Item.Settings()
+    Item STEELBOUND_GLAIVE = create("steelbound_glaive", new GlaiveItem(NorthToolMaterials.LUMIUM,  new Item.Settings()
             .maxCount(1)
             .fireproof()
-            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.3f))
+            .attributeModifiers(SwordItem.createAttributeModifiers(NorthToolMaterials.LUMIUM, 6, -2.3f))
     ));
 
     Item TERRAFORMAL_DISC = create("terraformal_disc", new Item( new Item.Settings()
             .maxCount(1)
             .jukeboxPlayable(NorthJukeboxSongs.TERRAFORMAL)
             .rarity(Rarity.EPIC)
-    ));
-
-    Item BERGENTRUCK_DISC = create("bergentruck_disc", new Item( new Item.Settings()
-            .maxCount(1)
-            .rarity(Rarity.RARE)
-            .jukeboxPlayable(NorthJukeboxSongs.BERGENTRUCK)
     ));
 
     Item BVO_DISC = create("bvo_disc", new Item( new Item.Settings()
@@ -50,19 +45,32 @@ public interface NorthItems {
     ));
 
 
-    Item LUMIUM_SPARK = create("lumium_spark", new FlareItem( new Item.Settings()
+    Item LUMIUM_SPARK = create("lumium_spark", new FlareItem( new AcornItemSettings()
+            .followsCam()
             .maxCount(1)
+            .jukeboxPlayable(NorthJukeboxSongs.BIGSHOT)
     ));
 
     Item MACHINE_OIL_BOTTLE = create("machine_oil_bottle", new OilItem(new Item.Settings()
             .maxCount(16)
     ));
 
+    Item GRACE = create("grace", new GraceItem(NorthToolMaterials.DIVINE, new AcornItemSettings()
+            .twoHanded()
+            .undroppable()
+            .maxCount(1)
+            .attributeModifiers(SwordItem.createAttributeModifiers(NorthToolMaterials.DIVINE, 7, -2.6f))
+    ));
+
+    
+
     static void initialize() {
         ITEMS.keySet().forEach(item -> Registry.register(Registries.ITEM, ITEMS.get(item), item));
 
         modifyItemNameColor(STEELBOUND_GLAIVE, 0x9999999);
         modifyItemNameColor(LUMIUM_SPARK, 0x639cff);
+        modifyItemNameColor(MACHINE_OIL_BOTTLE, 0x1a1b26);
+        modifyItemNameColor(GRACE, 0xdbe9ff);
     }
 
     private static Item create(String name, Item item) {

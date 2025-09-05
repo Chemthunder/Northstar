@@ -9,10 +9,9 @@ import net.minecraft.entity.projectile.WindChargeEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
@@ -31,27 +30,27 @@ public class FlareItem extends Item {
    ItemStack mainHand = user.getMainHandStack();
    ItemStack offHand = user.getOffHandStack();
 
-
-    if (user.isSneaking() == false && mainHand.isOf(NorthItems.LUMIUM_SPARK)) {
+    if (!user.isSneaking() && mainHand.isOf(NorthItems.LUMIUM_SPARK)) {
         launchFireball(user, user.getMainHandStack());
     } else if (user.isSneaking() && mainHand.isOf(NorthItems.LUMIUM_SPARK)) {
         launchBeegFireball(user, user.getMainHandStack());
     }
 
-    if (offHand.isOf(NorthItems.LUMIUM_SPARK) && user.isSneaking()) {
+    if (offHand.isOf(NorthItems.LUMIUM_SPARK)) {
         if (!world.isClient) {
-            WindChargeEntity windCharge = new WindChargeEntity(user, world, user.getX(), user.getY() + 1.5f,user.getZ());
+            WindChargeEntity windCharge = new WindChargeEntity(user, world, user.getX(), user.getY() + 1.5f, user.getZ());
 
-            windCharge.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 3f, 1.0f); // power, divergence
+            windCharge.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 3f, 4.0f); // power, divergence
 
             world.spawnEntity(windCharge);
 
             user.getItemCooldownManager().set(offHand.getItem(), 4);
         }
     }
-
         return super.use(world, user, hand);
     }
+
+
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
@@ -61,27 +60,28 @@ public class FlareItem extends Item {
 
     public static void launchFireball(PlayerEntity player, ItemStack stack) {
         World world = player.getWorld();
-        player.playSound(NorthSounds.SPARK_LOAD, 0.5f, 1);
+        player.playSound(SoundEvents.ENTITY_GHAST_SHOOT, 3f, 1);
         FireballEntity fireball = new FireballEntity(world, player, player.getRotationVec(0), 0);
         Vec3d pos = player.getPos();
         fireball.updatePosition(pos.x, pos.y + 1.5f, pos.z);
         world.spawnEntity(fireball);
      //   fireball.setVelocity(0, 0,0);
-        player.getItemCooldownManager().set(stack.getItem(), 10);
+        player.getItemCooldownManager().set(stack.getItem(), 4);
     }
 
 public static void launchBeegFireball(PlayerEntity player, ItemStack stack) {
         World world = player.getWorld();
-    player.playSound(NorthSounds.SPARK_LOAD, 0.5f, -1);
-    FireballEntity fireball = new FireballEntity(world, player, player.getRotationVec(0), 2);
+    player.playSound(NorthSounds.SPARK_LOAD, 0.5f, 1);
+    FireballEntity fireball = new FireballEntity(world, player, player.getRotationVec(0), 1);
     Vec3d pos = player.getPos();
     fireball.updatePosition(pos.x, pos.y + 1.5f, pos.z);
+    fireball.setVelocity(0, 0,0);
     world.spawnEntity(fireball);
     player.getItemCooldownManager().set(stack.getItem(), 40);
 }
 
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(this.getDescription().formatted(Formatting.AQUA));
+        tooltip.add(this.getDescription().withColor(0x212a38));
     }
 
     public MutableText getDescription() {

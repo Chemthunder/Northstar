@@ -15,7 +15,7 @@ import net.minecraft.text.Text;
 public interface NorthItemGroup {
     RegistryKey<ItemGroup> GROUP_KEY = RegistryKey.of(RegistryKeys.ITEM_GROUP, Northstar.id("northstar"));
     ItemGroup ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(NorthItems.LUMIUM_SPARK))
+            .icon(() -> new ItemStack(NorthItems.LUMIUM_INGOT))
             .displayName(Text.translatable("itemGroup.northstar").styled(style -> style.withColor(0x354b66)))
             .build();
 
@@ -31,7 +31,7 @@ public interface NorthItemGroup {
         itemGroup.add(NorthItems.LUMIUM_INGOT);
         itemGroup.add(NorthItems.TERRAFORMAL_DISC);
         itemGroup.add(NorthItems.BVO_DISC);
-        itemGroup.add(NorthItems.BERGENTRUCK_DISC);
-
+        itemGroup.add(NorthItems.MACHINE_OIL_BOTTLE);
+        itemGroup.add(NorthItems.GRACE);
     }
 }

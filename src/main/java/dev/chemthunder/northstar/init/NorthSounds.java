@@ -12,18 +12,13 @@ import java.util.Map;
 public interface NorthSounds {
     Map<SoundEvent, Identifier> SOUNDS = new LinkedHashMap<>();
 
-    SoundEvent POWER_UP = create("item.power_up");
-    SoundEvent UNCHARGED = create("item.uncharged");
-
     SoundEvent TERRAFORMAL = create("music.terraformal");
-    SoundEvent BERGENTRUCK = create("music.bergentruck");
     SoundEvent BUTCHERVANITYOVERCOOKED = create("music.bvo");
     SoundEvent BIGSHOT = create("music.bigshot");
-    SoundEvent BLACKKNIFE = create("music.blackknife");
 
-    SoundEvent SWOOSH = create("item.swoosh");
     SoundEvent SPARK_LOAD = create("item.spark_load");
-    SoundEvent CLANG = create("item.clang");
+
+    SoundEvent STORM_RING = create("event.storm_ring");
 
     private static SoundEvent create(String name) {
         SoundEvent soundEvent = SoundEvent.of(Northstar.id(name));

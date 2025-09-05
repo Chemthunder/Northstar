@@ -1,8 +1,0 @@
-{
-  "description": {
-    "translate": "jukebox_song.northstar.bergentruck"
-  },
-  "comparator_output": 1,
-  "length_in_seconds": 61,
-  "sound_event": "northstar:music.bergentruck"
-}

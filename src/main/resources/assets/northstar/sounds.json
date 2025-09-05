@@ -1,43 +1,15 @@
 {
-  "item.power_up": {
-    "sounds": [
-      "northstar:item/power_up"
-    ],
-    "subtitle": "northstar.subtitles.item.power_up"
-  },
-
-  "item.swoosh": {
-    "sounds": [
-      "northstar:item/swoosh"
-    ],
-    "subtitle": "northstar.subtitles.item.swoosh"
-  },
-
   "item.spark_load": {
     "sounds": [
       "northstar:item/spark_load"
     ],
     "subtitle": "northstar.subtitles.item.spark_load"
   },
-
-  "item.clang": {
-    "sounds": [
-      "northstar:item/clang"
-    ],
-    "subtitle": "northstar.subtitles.item.clang"
-  },
-
   "music.terraformal": {
     "sounds": [
       "northstar:music/terraformal"
     ],
     "subtitle": "northstar.subtitles.music.terraformal"
-  },
-  "music.bergentruck": {
-    "sounds": [
-      "northstar:music/bergentruck"
-    ],
-    "subtitle": "northstar.subtitles.music.bergentruck"
   },
   "music.bvo": {
     "sounds": [
@@ -53,10 +25,10 @@
     "subtitle": "northstar.subtitles.music.bigshot"
   },
 
-  "music.blackknife": {
+  "event.storm_ring": {
     "sounds": [
-      "northstar:music/blackknife"
+      "northstar:event/storm_ring"
     ],
-    "subtitle": "northstar.subtitles.music.blackknife"
+    "subtitle": "northstar.subtitles.event.storm_ring"
   }
 }

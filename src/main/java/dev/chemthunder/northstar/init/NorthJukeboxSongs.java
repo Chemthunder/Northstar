@@ -7,10 +7,8 @@ import net.minecraft.registry.RegistryKeys;
 
 public interface NorthJukeboxSongs {
     RegistryKey<JukeboxSong> TERRAFORMAL = of("terraformal");
-    RegistryKey<JukeboxSong> BERGENTRUCK = of("bergentruck");
     RegistryKey<JukeboxSong> BUTCHERVANITYOVERCOOKED = of("bvo");
     RegistryKey<JukeboxSong> BIGSHOT = of("bigshot");
-    RegistryKey<JukeboxSong> BLACKKNIFE= of("blackknife");
 
 
     private static RegistryKey<JukeboxSong> of(String id) {

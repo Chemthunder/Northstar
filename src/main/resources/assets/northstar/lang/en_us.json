@@ -24,7 +24,7 @@
   "jukebox_song.northstar.bergentruck": "Eanna_ - Bergentruck ULTIMATE REMIX",
 
   "item.northstar.lumium_spark": "Lumium Spark",
-  "item.northstar.lumium_spark.desc": "Main hand right click to summon a fireball, off hand to summon a wind charge",
+  "item.northstar.lumium_spark.desc": "Main hand right click to summon a fireball \nOff hand to summon a wind charge",
 
   "item.northstar.bvo_disc": "Music Disc",
   "jukebox_song.northstar.bvo": "4kio - Butcher Vanity OVERCOOKED",
@@ -43,9 +43,6 @@
 
   "itemGroup.northstar": "Northstar",
 
-  "death.attack.throngled": "%1$s's soul was reaped in two",
-  "death.attack.throngled.player": "%1$s's soul was reaped in two whilst trying to evade %2$s",
-
   "advancement.northstar.root": "Northstar",
   "advancement.northstar.root.desc": "Prometheus and Shit",
 
@@ -57,5 +54,12 @@
 
   "text.spark.overload": "Cannot use both at the same time!",
 
-  "item.northstar.machine_oil_bottle": "Bottle of Machine Oil"
+  "item.northstar.machine_oil_bottle": "Bottle of Machine Oil",
+
+  "item.northstar.grace": "Grace",
+  "death.attack.grace_kill.player": "%1$s beheld the sight of fate, and it was beautiful",
+  "death.attack.grace_kill": "%1$s beheld the sight of fate",
+  "item.northstar.grace.desc": "The light of heaven is an inconceivable thing. \nPity nobody will experience true bliss by our hands.",
+
+  "text.grace.change_weather": "The world arises in a symphony of battle"
 }
