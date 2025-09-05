@@ -48,13 +48,12 @@ public interface NorthItems {
             .jukeboxPlayable(NorthJukeboxSongs.BIGSHOT)
     ));
 
-    Item ENSCULKED_LUMIUM = create("encsulked_lumium", new EnsculkedLumiumItem(new AcornItemSettings()
-            .showHand()
+    Item ENSCULKED_LUMIUM = create("ensculked_lumium", new EnsculkedLumiumItem(new AcornItemSettings()
+            .maxCount(1)
             .fireproof()
     ));
 
-    Item AMETHYSTINE_LUMIUM = create("amethystine_lumium", new Item(new AcornItemSettings()
-            .showHand()
+    Item AMETHYSTINE_LUMIUM = create("amethystine_lumium", new AmethystineItem(new AcornItemSettings()
             .fireproof()
     ));
 

@@ -19,7 +19,7 @@ public class EnsculkedLumiumItem extends Item {
     public ActionResult useOnBlock(ItemUsageContext context) {
         BlockState state = context.getWorld().getBlockState(context.getBlockPos());
         PlayerEntity user = context.getPlayer();
-        if (user != null && user.isSneaking() && state.isOf(Blocks.BUDDING_AMETHYST)) {
+        if (user != null && user.isSneaking() && state.isOf(Blocks.STONECUTTER)) {
             ItemStack stack = user.getMainHandStack();
             ItemStack offStack = user.getOffHandStack();
 
