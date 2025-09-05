@@ -76,6 +76,8 @@ public interface NorthItems {
         modifyItemNameColor(LUMIUM_SPARK, 0x639cff);
         modifyItemNameColor(MACHINE_OIL_BOTTLE, 0x1a1b26);
         modifyItemNameColor(GRACE, 0xdbe9ff);
+        modifyItemNameColor(AMETHYSTINE_LUMIUM, 0xd987ff);
+        modifyItemNameColor(ENSCULKED_LUMIUM, 0x00ffd9);
     }
 
     private static Item create(String name, Item item) {
