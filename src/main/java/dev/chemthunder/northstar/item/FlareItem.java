@@ -5,6 +5,7 @@ import dev.chemthunder.northstar.init.NorthSounds;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FireballEntity;
+import net.minecraft.entity.projectile.SmallFireballEntity;
 import net.minecraft.entity.projectile.WindChargeEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -60,8 +61,8 @@ public class FlareItem extends Item {
 
     public static void launchFireball(PlayerEntity player, ItemStack stack) {
         World world = player.getWorld();
-        player.playSound(SoundEvents.ENTITY_GHAST_SHOOT, 3f, 1);
-        FireballEntity fireball = new FireballEntity(world, player, player.getRotationVec(0), 0);
+        player.playSound(SoundEvents.ENTITY_GHAST_SHOOT, 1f, 1);
+        SmallFireballEntity fireball = new SmallFireballEntity(world, player, player.getRotationVec(0));
         Vec3d pos = player.getPos();
         fireball.updatePosition(pos.x, pos.y + 1.5f, pos.z);
         world.spawnEntity(fireball);

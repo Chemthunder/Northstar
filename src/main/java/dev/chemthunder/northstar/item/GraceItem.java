@@ -1,6 +1,7 @@
 package dev.chemthunder.northstar.item;
 
 import dev.chemthunder.northstar.init.NorthDamageTypes;
+import dev.chemthunder.northstar.init.NorthItems;
 import dev.chemthunder.northstar.init.NorthSounds;
 import net.acoyt.acornlib.api.item.CustomHitParticleItem;
 import net.acoyt.acornlib.api.item.CustomHitSoundItem;
@@ -78,6 +79,7 @@ public class GraceItem extends SwordItem implements CustomHitParticleItem, Custo
 
         // extra
         world.playSound(user, user.getBlockPos(), NorthSounds.STORM_RING, SoundCategory.MASTER);
+        user.getItemCooldownManager().set(NorthItems.GRACE, 50);
 
         return TypedActionResult.success(user.getStackInHand(hand), world.isClient());
     }
