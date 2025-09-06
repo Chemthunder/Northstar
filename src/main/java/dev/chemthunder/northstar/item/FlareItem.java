@@ -1,7 +1,9 @@
 package dev.chemthunder.northstar.item;
 
+import dev.chemthunder.northstar.init.NorthEnchantments;
 import dev.chemthunder.northstar.init.NorthItems;
 import dev.chemthunder.northstar.init.NorthSounds;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FireballEntity;
@@ -28,64 +30,74 @@ public class FlareItem extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-   ItemStack mainHand = user.getMainHandStack();
-   ItemStack offHand = user.getOffHandStack();
+        ItemStack mainHand = user.getMainHandStack();
+        ItemStack offHand = user.getOffHandStack();
+        if (!EnchantmentHelper.hasAnyEnchantmentsWith(user.getStackInHand(hand), NorthEnchantments.GUST)) {
+            if (!user.isSneaking()) {
+                launchFireball(user, user.getMainHandStack());
+            } else if (user.isSneaking()) {
+                launchBeegFireball(user, user.getMainHandStack());
+            }
+        } else {
+            if (!user.isSneaking()) {
+                if (!world.isClient) {
+                    WindChargeEntity windCharge = new WindChargeEntity(user, world, user.getX(), user.getY() + 1.5f, user.getZ());
 
-    if (!user.isSneaking() && mainHand.isOf(NorthItems.LUMIUM_SPARK)) {
-        launchFireball(user, user.getMainHandStack());
-    } else if (user.isSneaking() && mainHand.isOf(NorthItems.LUMIUM_SPARK)) {
-        launchBeegFireball(user, user.getMainHandStack());
-    }
+                    windCharge.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 3f, 4.0f); // power, divergence
 
-    if (offHand.isOf(NorthItems.LUMIUM_SPARK)) {
-        if (!world.isClient) {
-            WindChargeEntity windCharge = new WindChargeEntity(user, world, user.getX(), user.getY() + 1.5f, user.getZ());
+                    world.spawnEntity(windCharge);
 
-            windCharge.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 3f, 4.0f); // power, divergence
+                    user.getItemCooldownManager().set(NorthItems.LUMIUM_SPARK, 4);
 
-            world.spawnEntity(windCharge);
+                } else if (user.isSneaking()) {
+                   user.setVelocity(user.getVelocity().x, 4, user.getVelocity().z);
+                   user.velocityModified = true;
+                }
+            }
+        }
 
-            user.getItemCooldownManager().set(offHand.getItem(), 4);
+
+            //  if (offHand.isOf(Items.WIND_CHARGE)) {
+            //
+            //     }
+
+            return super.use(world, user, hand);
+        }
+
+
+
+        @Override
+        public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+            target.setOnFireFor(5f);
+            return super.postHit(stack, target, attacker);
+        }
+
+        public static void launchFireball(PlayerEntity player, ItemStack stack) {
+            World world = player.getWorld();
+            player.playSound(SoundEvents.ENTITY_GHAST_SHOOT, 1f, 1);
+            SmallFireballEntity fireball = new SmallFireballEntity(world, player, player.getRotationVec(0));
+            Vec3d pos = player.getPos();
+            fireball.updatePosition(pos.x, pos.y + 1.5f, pos.z);
+            world.spawnEntity(fireball);
+            player.getItemCooldownManager().set(NorthItems.LUMIUM_SPARK, 2);
+        }
+
+        public static void launchBeegFireball(PlayerEntity player, ItemStack stack) {
+            World world = player.getWorld();
+            player.playSound(NorthSounds.SPARK_LOAD, 0.5f, 1);
+            FireballEntity fireball = new FireballEntity(world, player, player.getRotationVec(0), 1);
+            Vec3d pos = player.getPos();
+            fireball.updatePosition(pos.x, pos.y + 1.5f, pos.z);
+            fireball.setVelocity(0, 0,0);
+            world.spawnEntity(fireball);
+            player.getItemCooldownManager().set(NorthItems.LUMIUM_SPARK, 40);
+        }
+
+        public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+            tooltip.add(this.getDescription().withColor(0x212a38));
+        }
+
+        public MutableText getDescription() {
+            return Text.translatable(this.getTranslationKey() + ".desc");
         }
     }
-        return super.use(world, user, hand);
-    }
-
-
-
-    @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.setOnFireFor(5f);
-        return super.postHit(stack, target, attacker);
-    }
-
-    public static void launchFireball(PlayerEntity player, ItemStack stack) {
-        World world = player.getWorld();
-        player.playSound(SoundEvents.ENTITY_GHAST_SHOOT, 1f, 1);
-        SmallFireballEntity fireball = new SmallFireballEntity(world, player, player.getRotationVec(0));
-        Vec3d pos = player.getPos();
-        fireball.updatePosition(pos.x, pos.y + 1.5f, pos.z);
-        world.spawnEntity(fireball);
-     //   fireball.setVelocity(0, 0,0);
-        player.getItemCooldownManager().set(stack.getItem(), 4);
-    }
-
-public static void launchBeegFireball(PlayerEntity player, ItemStack stack) {
-        World world = player.getWorld();
-    player.playSound(NorthSounds.SPARK_LOAD, 0.5f, 1);
-    FireballEntity fireball = new FireballEntity(world, player, player.getRotationVec(0), 1);
-    Vec3d pos = player.getPos();
-    fireball.updatePosition(pos.x, pos.y + 1.5f, pos.z);
-    fireball.setVelocity(0, 0,0);
-    world.spawnEntity(fireball);
-    player.getItemCooldownManager().set(stack.getItem(), 40);
-}
-
-    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(this.getDescription().withColor(0x212a38));
-    }
-
-    public MutableText getDescription() {
-        return Text.translatable(this.getTranslationKey() + ".desc");
-    }
-}

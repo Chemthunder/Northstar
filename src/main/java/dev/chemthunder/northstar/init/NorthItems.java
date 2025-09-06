@@ -42,7 +42,7 @@ public interface NorthItems {
     ));
 
 
-    Item LUMIUM_SPARK = create("lumium_spark", new FlareItem( new AcornItemSettings()
+    Item LUMIUM_SPARK = create("lumium_spark", new FlareItem(new AcornItemSettings()
             .followsCam()
             .maxCount(1)
             .jukeboxPlayable(NorthJukeboxSongs.BIGSHOT)

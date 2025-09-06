@@ -1,9 +1,6 @@
 package dev.chemthunder.northstar;
 
-import dev.chemthunder.northstar.init.NorthEffects;
-import dev.chemthunder.northstar.init.NorthItemGroup;
-import dev.chemthunder.northstar.init.NorthItems;
-import dev.chemthunder.northstar.init.NorthSounds;
+import dev.chemthunder.northstar.init.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.loot.LootPool;
@@ -26,6 +23,8 @@ public class Northstar implements ModInitializer {
         NorthItems.initialize();
         NorthSounds.init();
         NorthEffects.init();
+     NorthEnchantments.init();
+
 
 
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registry) -> {

@@ -18,5 +18,10 @@
   "anvil_cost": 0,
   "slots": [
     "mainhand"
-  ]
+  ],
+  "effects": {
+   "northstar:gust":{
+
+   }
+  }
 }

@@ -1,11 +1,6 @@
 {
   "item.northstar.steelbound_glaive": "Steelbound Glaive",
 
-  "item.northstar.crossfire_assembly": "Crossfire Assembly",
-
-  "item.northstar.crossfire_assembly.charged": "Charged",
-  "item.northstar.crossfire_assembly.uncharged": "Uncharged",
-
   "effect.northstar.ensteamed": "Ensteamed",
   "death.attack.steamed": "%1$s was burnt to a crisp",
   "death.attack.steamed.player": "%1$s was burnt to a crisp by %2$s",
@@ -42,7 +37,7 @@
   "advancement.northstar.root": "Northstar",
   "advancement.northstar.root.desc": "Prometheus and Shit",
 
-  "advancement.northstar.pyromania": "'Murica",
+  "advancement.northstar.pyromania": "Environmental Terroism (Legal trust ;3)",
   "advancement.northstar.pyromania.desc": "Obtain a Lumium Spark",
 
   "advancement.northstar.hunt": "Huntsman",
