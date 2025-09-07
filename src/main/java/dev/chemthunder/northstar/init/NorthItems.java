@@ -19,7 +19,7 @@ public interface NorthItems {
     Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 
 
-    Item LUMIUM_INGOT = create("lumium_ingot", new Item(new Item.Settings()
+    Item LUMIUM_INGOT = create("lumium_ingot", new LumiumIngotItem(new Item.Settings()
             .fireproof()
     ));
 
@@ -78,6 +78,7 @@ public interface NorthItems {
         modifyItemNameColor(GRACE, 0xdbe9ff);
         modifyItemNameColor(AMETHYSTINE_LUMIUM, 0xd987ff);
         modifyItemNameColor(ENSCULKED_LUMIUM, 0x00ffd9);
+        modifyItemNameColor(LUMIUM_INGOT, 0x598ac9);
     }
 
     private static Item create(String name, Item item) {

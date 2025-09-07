@@ -5,9 +5,6 @@
   "death.attack.steamed": "%1$s was burnt to a crisp",
   "death.attack.steamed.player": "%1$s was burnt to a crisp by %2$s",
 
-  "block.northstar.soulsteel_generator": "Soulsteel Generator",
-  "block.northstar.lumium_block": "Lumium Block",
-
   "item.northstar.lumium_ingot": "Lumium Ingot",
 
   "item.northstar.crossfire_interface": "Crossfire Interface",
@@ -15,11 +12,8 @@
   "item.northstar.terraformal_disc": "Music Disc",
   "jukebox_song.northstar.terraformal": "Intel - Terraformal // Set and Stone",
 
-  "item.northstar.bergentruck_disc": "Music Disc",
-  "jukebox_song.northstar.bergentruck": "Eanna_ - Bergentruck ULTIMATE REMIX",
-
   "item.northstar.lumium_spark": "Lumium Spark",
-  "item.northstar.lumium_spark.desc": "\uA645Main hand right click to summon a fireball \nOff hand to summon a wind charge",
+  "item.northstar.lumium_spark.desc": "Main hand right click to summon a fireball \nOff hand to summon a wind charge",
 
   "item.northstar.bvo_disc": "Music Disc",
   "jukebox_song.northstar.bvo": "4kio - Butcher Vanity OVERCOOKED",

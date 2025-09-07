@@ -50,16 +50,12 @@ public class FlareItem extends Item {
                     world.spawnEntity(windCharge);
 
                     user.getItemCooldownManager().set(NorthItems.LUMIUM_SPARK, 10);
-            }
+                }
 
             } else if (user.isSneaking()) {
                 user.setVelocity(user.getVelocity().x, 4, user.getVelocity().z);
                 user.velocityModified = true;
             }
-        } else if (EnchantmentHelper.hasAnyEnchantmentsWith(user.getStackInHand(hand), NorthEnchantments.ECHOLOCATE)) {
-
-         user.sendMessage(Text.translatable("text.spark.echo").withColor(0x8cffcd).formatted(Formatting.ITALIC));
-
         }
             return super.use(world, user, hand);
         }
