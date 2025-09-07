@@ -1,14 +1,17 @@
 package dev.chemthunder.northstar.item;
 
 import dev.chemthunder.northstar.init.NorthDamageTypes;
-import dev.chemthunder.northstar.init.NorthItems;
+import dev.chemthunder.northstar.init.NorthDataComponents;
+import dev.chemthunder.northstar.init.NorthEffects;
 import dev.chemthunder.northstar.init.NorthSounds;
 import net.acoyt.acornlib.api.item.CustomHitParticleItem;
 import net.acoyt.acornlib.api.item.CustomHitSoundItem;
 import net.acoyt.acornlib.api.item.CustomKillSourceItem;
 import net.acoyt.acornlib.impl.client.particle.SweepParticleEffect;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -32,7 +35,7 @@ public class GraceItem extends SwordItem implements CustomHitParticleItem, Custo
     public GraceItem(ToolMaterial toolMaterial, Settings settings) {
         super(toolMaterial, settings);
     }
-    public static final SweepParticleEffect[] EFFECTS = new SweepParticleEffect[]{new SweepParticleEffect(0x1c6a91, 0x17465e), new SweepParticleEffect(0xb5e6ff, 0x83cdf2)};
+    public static final SweepParticleEffect[] EFFECTS = new SweepParticleEffect[]{new SweepParticleEffect(0x92e8c0, 0x4fa4b8), new SweepParticleEffect(0x3a3f5e, 0x4c6885)};
 
 
     public void spawnHitParticles(PlayerEntity player) {
@@ -50,7 +53,26 @@ public class GraceItem extends SwordItem implements CustomHitParticleItem, Custo
         }
     }
 
+    @Override
+    public boolean isItemBarVisible(ItemStack stack) {
+        return true;
+    }
 
+    @Override
+    public int getItemBarColor(ItemStack stack) {
+        return 0x03fcb5;
+    }
+
+
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        if (stack.getOrDefault(NorthDataComponents.COOLDOWN_TIME,0) > 0) {
+            stack.set(NorthDataComponents.COOLDOWN_TIME, stack.getOrDefault(NorthDataComponents.COOLDOWN_TIME, 0) -1);
+        }
+
+        super.inventoryTick(stack, world, entity, slot, selected);
+    }
 
     @Override
     public void playHitSound(PlayerEntity playerEntity) {
@@ -64,24 +86,31 @@ public class GraceItem extends SwordItem implements CustomHitParticleItem, Custo
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (world instanceof ServerWorld serverWorld) {
-            // Set weather: clearDuration, rainDuration, raining, thundering
-            serverWorld.setWeather(0, 6000, true, true);
+        ItemStack stack = user.getStackInHand(hand);
 
-            //feedback to player
-            user.sendMessage(Text.translatable("text.grace.change_weather").withColor(0x3b5169).formatted(Formatting.ITALIC), true);
-            serverWorld.setThunderGradient(60);
+        if (stack.getOrDefault(NorthDataComponents.COOLDOWN_TIME, 0) == 0) {
+            if (world instanceof ServerWorld serverWorld) {
+                // Set weather: clearDuration, rainDuration, raining, thundering
+                serverWorld.setWeather(0, 6000, true, true);
 
-        } else {
-            //client-side feedback
-            user.sendMessage(Text.translatable("text.grace.change_weather_fail").withColor(0x3b5169).formatted(Formatting.ITALIC), true);
+                //feedback to player
+                user.sendMessage(Text.translatable("text.grace.change_weather").withColor(0x3b5169).formatted(Formatting.ITALIC), true);
+                serverWorld.setThunderGradient(60);
+
+            }
+
+            // extra
+            world.playSound(user, user.getBlockPos(), NorthSounds.STORM_RING, SoundCategory.MASTER);
+            user.addStatusEffect(new StatusEffectInstance(NorthEffects.SCHIZOPHRENIA));
+
+            stack.set(NorthDataComponents.COOLDOWN_TIME, 120);
+            return TypedActionResult.success(user.getStackInHand(hand), false);
         }
+        return TypedActionResult.fail(user.getStackInHand(hand));
+    }
 
-        // extra
-        world.playSound(user, user.getBlockPos(), NorthSounds.STORM_RING, SoundCategory.MASTER);
-        user.getItemCooldownManager().set(NorthItems.GRACE, 50);
-
-        return TypedActionResult.success(user.getStackInHand(hand), world.isClient());
+    public int getItemBarStep(ItemStack stack) {
+        return Math.round((float)stack.getOrDefault(NorthDataComponents.COOLDOWN_TIME, 0) / 120 * 13);
     }
 
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {

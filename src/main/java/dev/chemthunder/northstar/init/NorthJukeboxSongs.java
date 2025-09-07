@@ -9,6 +9,7 @@ public interface NorthJukeboxSongs {
     RegistryKey<JukeboxSong> TERRAFORMAL = of("terraformal");
     RegistryKey<JukeboxSong> BUTCHERVANITYOVERCOOKED = of("bvo");
     RegistryKey<JukeboxSong> BIGSHOT = of("bigshot");
+    RegistryKey<JukeboxSong> HARBINGER = of("harbinger");
 
 
     private static RegistryKey<JukeboxSong> of(String id) {

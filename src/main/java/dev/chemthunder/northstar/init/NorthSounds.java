@@ -19,6 +19,7 @@ public interface NorthSounds {
     SoundEvent SPARK_LOAD = create("item.spark_load");
 
     SoundEvent STORM_RING = create("event.storm_ring");
+    SoundEvent HARBINGER = create("music.harbinger");
 
     private static SoundEvent create(String name) {
         SoundEvent soundEvent = SoundEvent.of(Northstar.id(name));

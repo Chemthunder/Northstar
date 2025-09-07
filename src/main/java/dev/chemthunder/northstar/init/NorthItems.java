@@ -3,6 +3,7 @@ package dev.chemthunder.northstar.init;
 import dev.chemthunder.northstar.Northstar;
 import dev.chemthunder.northstar.item.*;
 import net.acoyt.acornlib.api.item.AcornItemSettings;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
 import net.minecraft.registry.Registries;
@@ -57,7 +58,7 @@ public interface NorthItems {
             .fireproof()
     ));
 
-    Item MACHINE_OIL_BOTTLE = create("machine_oil_bottle", new OilItem(new Item.Settings()
+    Item FORBIDDEN_VIAL = create("forbidden_vial", new OilItem(new Item.Settings()
             .maxCount(16)
     ));
 
@@ -65,20 +66,25 @@ public interface NorthItems {
             .twoHanded()
             .undroppable()
             .maxCount(1)
-            .attributeModifiers(SwordItem.createAttributeModifiers(NorthToolMaterials.DIVINE, 7, -2.6f))
+            .attributeModifiers(SwordItem.createAttributeModifiers(NorthToolMaterials.DIVINE, 8, -2.8f))
     ));
-    
 
-    static void initialize() {
+    Item HARBINGER_DISC = create("harbinger_disc", new Item(new AcornItemSettings()
+            .maxCount(1)
+            .jukeboxPlayable(NorthJukeboxSongs.HARBINGER)
+    ));
+
+    static void init() {
         ITEMS.keySet().forEach(item -> Registry.register(Registries.ITEM, ITEMS.get(item), item));
 
         modifyItemNameColor(STEELBOUND_GLAIVE, 0x9999999);
         modifyItemNameColor(LUMIUM_SPARK, 0x639cff);
-        modifyItemNameColor(MACHINE_OIL_BOTTLE, 0x1a1b26);
+        modifyItemNameColor(FORBIDDEN_VIAL, 0x1a1b26);
         modifyItemNameColor(GRACE, 0xdbe9ff);
         modifyItemNameColor(AMETHYSTINE_LUMIUM, 0xd987ff);
         modifyItemNameColor(ENSCULKED_LUMIUM, 0x00ffd9);
         modifyItemNameColor(LUMIUM_INGOT, 0x598ac9);
+        modifyItemNameColor(HARBINGER_DISC, 0x598ac9);
     }
 
     private static Item create(String name, Item item) {

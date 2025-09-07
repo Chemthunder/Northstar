@@ -11,6 +11,12 @@
     ],
     "subtitle": "northstar.subtitles.music.terraformal"
   },
+  "music.harbinger": {
+    "sounds": [
+      "northstar:music/harbinger"
+    ],
+    "subtitle": "northstar.subtitles.music.harbinger"
+  },
   "music.bvo": {
     "sounds": [
       "northstar:music/bvo"

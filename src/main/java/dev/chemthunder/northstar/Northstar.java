@@ -24,10 +24,11 @@ public class Northstar implements ModInitializer {
     @Override
     public void onInitialize() {
         NorthItemGroup.init();
-        NorthItems.initialize();
+        NorthItems.init();
         NorthSounds.init();
         NorthEffects.init();
         NorthEnchantments.init();
+        NorthDataComponents.init();
 
 
 
@@ -36,7 +37,7 @@ public class Northstar implements ModInitializer {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(UniformLootNumberProvider.create(1.0F, 4.0f))
                         .conditionally(RandomChanceLootCondition.builder(0.6F))
-                        .with(ItemEntry.builder(NorthItems.MACHINE_OIL_BOTTLE));
+                        .with(ItemEntry.builder(NorthItems.FORBIDDEN_VIAL));
 
                 tableBuilder.pool(poolBuilder);
             }

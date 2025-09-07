@@ -1,5 +1,7 @@
 {
-  "description": "Gust",
+  "description": {
+    "translate": "enchantment.northstar.gust"
+  },
   "exclusive_set": [],
   "supported_items": [
     "northstar:lumium_spark"

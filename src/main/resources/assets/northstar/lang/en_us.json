@@ -5,6 +5,8 @@
   "death.attack.steamed": "%1$s was burnt to a crisp",
   "death.attack.steamed.player": "%1$s was burnt to a crisp by %2$s",
 
+  "effect.northstar.schizophrenia": "Rally",
+
   "item.northstar.lumium_ingot": "Lumium Ingot",
 
   "item.northstar.crossfire_interface": "Crossfire Interface",
@@ -19,7 +21,7 @@
   "jukebox_song.northstar.bvo": "4kio - Butcher Vanity OVERCOOKED",
 
   "jukebox_song.northstar.bigshot": "§kToby Fox - Bigshot",
-  "northstar.subtitles.music.bigshot": "",
+  "northstar.subtitles.music.bigshot": "Music Disc Plays",
 
   "northstar.subtitles.music.terraformal": "Terraformal Plays",
   "northstar.subtitles.music.bvo": ":3",
@@ -28,18 +30,7 @@
 
   "itemGroup.northstar": "Northstar",
 
-  "advancement.northstar.root": "Northstar",
-  "advancement.northstar.root.desc": "Prometheus and Shit",
-
-  "advancement.northstar.pyromania": "Environmental Terroism (Legal trust ;3)",
-  "advancement.northstar.pyromania.desc": "Obtain a Lumium Spark",
-
-  "advancement.northstar.hunt": "Huntsman",
-  "advancement.northstar.hunt.desc": "Obtain a Steelbound Glaive",
-
-  "text.spark.overload": "Cannot use both at the same time!",
-
-  "item.northstar.machine_oil_bottle": "Bottle of Machine Oil",
+  "item.northstar.forbidden_vial": "Forbidden Vial",
 
   "item.northstar.grace": "Grace",
   "death.attack.grace_kill.player": "%1$s beheld the sight of fate, and it was beautiful",
@@ -47,11 +38,15 @@
   "item.northstar.grace.desc": "The light of heaven is an inconceivable thing. \nPity nobody will experience true bliss by our hands.",
 
   "text.grace.change_weather": "The world arises in a symphony of battle",
-  "text.spark.echo": "SCREEEEE",
+  "northstar.subtitles.event.storm_ring": "RING-A-DING MOTHERFUCKER",
 
   "item.northstar.ensculked_lumium": "Ensculked Lumium",
+
   "item.northstar.amethystine_lumium": "Amethystine Lumium",
 
+  "enchantment.northstar.gust": "Gust",
+  "enchantment.northstar.gust.desc": "Changes the Lumium Spark's shots to wind charges, and swaps the large fireball shot for a boost upwards.",
 
-  "enchantment.northstar.gust.desc": "Changes the Lumium Spark's shots to wind charges."
+  "item.northstar.harbinger_disc": "Music Disc",
+  "jukebox_song.northstar.harbinger": "§kHarbinger, a Light Above"
 }

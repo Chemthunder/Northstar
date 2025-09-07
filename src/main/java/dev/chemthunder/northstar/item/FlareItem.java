@@ -30,9 +30,12 @@ public class FlareItem extends Item {
 
 
     @Override
+    public int getEnchantability() {
+        return 1;
+    }
+
+    @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack mainHand = user.getMainHandStack();
-        ItemStack offHand = user.getOffHandStack();
         if (!EnchantmentHelper.hasAnyEnchantmentsWith(user.getStackInHand(hand), NorthEnchantments.GUST)) {
             if (!user.isSneaking()) {
                 launchFireball(user, user.getMainHandStack());

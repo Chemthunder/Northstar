@@ -22,7 +22,7 @@ public class OilItem extends Item {
             ItemStack stack = user.getMainHandStack();
             ItemStack offStack = user.getOffHandStack();
 
-            if (stack.isOf(Items.COPPER_INGOT) && offStack.isOf(NorthItems.MACHINE_OIL_BOTTLE)) {
+            if (stack.isOf(Items.COPPER_INGOT) && offStack.isOf(NorthItems.FORBIDDEN_VIAL)) {
                 offStack.decrement(1);
                 stack.decrement(1);
                 user.giveItemStack(NorthItems.AMETHYSTINE_LUMIUM.getDefaultStack());

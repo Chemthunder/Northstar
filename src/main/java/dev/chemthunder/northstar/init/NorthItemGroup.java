@@ -31,7 +31,7 @@ public interface NorthItemGroup {
         itemGroup.add(NorthItems.LUMIUM_INGOT);
         itemGroup.add(NorthItems.TERRAFORMAL_DISC);
         itemGroup.add(NorthItems.BVO_DISC);
-        itemGroup.add(NorthItems.MACHINE_OIL_BOTTLE);
+        itemGroup.add(NorthItems.FORBIDDEN_VIAL);
         itemGroup.add(NorthItems.GRACE);
         itemGroup.add(NorthItems.ENSCULKED_LUMIUM);
         itemGroup.add(NorthItems.AMETHYSTINE_LUMIUM);
