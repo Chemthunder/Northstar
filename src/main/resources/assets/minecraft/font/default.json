@@ -1,0 +1,13 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "northstar:font/goober.png",
+      "ascent": 8,
+      "height": 8,
+      "chars": [
+        "\uA645"
+      ]
+    }
+  ]
+}

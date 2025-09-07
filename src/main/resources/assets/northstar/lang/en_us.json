@@ -19,13 +19,13 @@
   "jukebox_song.northstar.bergentruck": "Eanna_ - Bergentruck ULTIMATE REMIX",
 
   "item.northstar.lumium_spark": "Lumium Spark",
-  "item.northstar.lumium_spark.desc": "Main hand right click to summon a fireball \nOff hand to summon a wind charge",
+  "item.northstar.lumium_spark.desc": "\uA645Main hand right click to summon a fireball \nOff hand to summon a wind charge",
 
   "item.northstar.bvo_disc": "Music Disc",
   "jukebox_song.northstar.bvo": "4kio - Butcher Vanity OVERCOOKED",
 
-  "item.northstar.spamton_disc": "THE OG BIGSHOT",
-  "jukebox_song.northstar.bigshot": "Toby Fox - Bigshot",
+  "jukebox_song.northstar.bigshot": "§kToby Fox - Bigshot",
+  "northstar.subtitles.music.bigshot": "",
 
   "northstar.subtitles.music.terraformal": "Terraformal Plays",
   "northstar.subtitles.music.bvo": ":3",
@@ -53,7 +53,11 @@
   "item.northstar.grace.desc": "The light of heaven is an inconceivable thing. \nPity nobody will experience true bliss by our hands.",
 
   "text.grace.change_weather": "The world arises in a symphony of battle",
+  "text.spark.echo": "SCREEEEE",
 
   "item.northstar.ensculked_lumium": "Ensculked Lumium",
-  "item.northstar.amethystine_lumium": "Amethystine Lumium"
+  "item.northstar.amethystine_lumium": "Amethystine Lumium",
+
+
+  "enchantment.northstar.gust.desc": "Changes the Lumium Spark's shots to wind charges."
 }

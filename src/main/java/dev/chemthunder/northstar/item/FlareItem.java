@@ -15,6 +15,7 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
@@ -38,29 +39,28 @@ public class FlareItem extends Item {
             } else if (user.isSneaking()) {
                 launchBeegFireball(user, user.getMainHandStack());
             }
-        } else {
+
+        } else if (EnchantmentHelper.hasAnyEnchantmentsWith(user.getStackInHand(hand), NorthEnchantments.GUST)) {
             if (!user.isSneaking()) {
                 if (!world.isClient) {
                     WindChargeEntity windCharge = new WindChargeEntity(user, world, user.getX(), user.getY() + 1.5f, user.getZ());
 
-                    windCharge.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 3f, 4.0f); // power, divergence
+                    windCharge.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 3f, 1.0f); // power, divergence
 
                     world.spawnEntity(windCharge);
 
-                    user.getItemCooldownManager().set(NorthItems.LUMIUM_SPARK, 4);
-
-                } else if (user.isSneaking()) {
-                   user.setVelocity(user.getVelocity().x, 4, user.getVelocity().z);
-                   user.velocityModified = true;
-                }
+                    user.getItemCooldownManager().set(NorthItems.LUMIUM_SPARK, 10);
             }
+
+            } else if (user.isSneaking()) {
+                user.setVelocity(user.getVelocity().x, 4, user.getVelocity().z);
+                user.velocityModified = true;
+            }
+        } else if (EnchantmentHelper.hasAnyEnchantmentsWith(user.getStackInHand(hand), NorthEnchantments.ECHOLOCATE)) {
+
+         user.sendMessage(Text.translatable("text.spark.echo").withColor(0x8cffcd).formatted(Formatting.ITALIC));
+
         }
-
-
-            //  if (offHand.isOf(Items.WIND_CHARGE)) {
-            //
-            //     }
-
             return super.use(world, user, hand);
         }
 
@@ -79,7 +79,7 @@ public class FlareItem extends Item {
             Vec3d pos = player.getPos();
             fireball.updatePosition(pos.x, pos.y + 1.5f, pos.z);
             world.spawnEntity(fireball);
-            player.getItemCooldownManager().set(NorthItems.LUMIUM_SPARK, 2);
+            player.getItemCooldownManager().set(NorthItems.LUMIUM_SPARK, 4);
         }
 
         public static void launchBeegFireball(PlayerEntity player, ItemStack stack) {

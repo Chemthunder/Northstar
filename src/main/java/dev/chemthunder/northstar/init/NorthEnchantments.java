@@ -16,6 +16,8 @@ public interface NorthEnchantments {
 
     ComponentType<Unit> GUST = create("gust", builder -> builder.codec(Unit.CODEC));
 
+    ComponentType<Unit> ECHOLOCATE = create("echolocate", builder -> builder.codec(Unit.CODEC));
+
     private static <T> ComponentType<T> create(String id, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
         ComponentType<T> componentType = builderOperator.apply(ComponentType.builder()).build();
         ENCHANTMENT_EFFECTS.put(componentType, Northstar.id(id));
