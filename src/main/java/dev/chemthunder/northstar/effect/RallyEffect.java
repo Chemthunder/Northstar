@@ -8,11 +8,9 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 
-public class SchizophreniaEffect extends StatusEffect {
-    public SchizophreniaEffect() {
+public class RallyEffect extends StatusEffect {
+    public RallyEffect() {
         super(StatusEffectCategory.NEUTRAL, 0x94ffff);
     }
 
@@ -24,11 +22,6 @@ public class SchizophreniaEffect extends StatusEffect {
 
     public ParticleEffect createParticle(StatusEffectInstance effect) {
         return new BlockStateParticleEffect(ParticleTypes.BLOCK, Blocks.AIR.getDefaultState());
-    }
-
-    @Override
-    public Text getName() {
-        return Text.translatable("effectname.schizophrenia".formatted(Formatting.GOLD));
     }
 
     public boolean canApplyUpdateEffect(int duration, int amplifier) {

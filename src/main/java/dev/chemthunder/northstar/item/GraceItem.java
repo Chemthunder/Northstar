@@ -101,7 +101,8 @@ public class GraceItem extends SwordItem implements CustomHitParticleItem, Custo
 
             // extra
             world.playSound(user, user.getBlockPos(), NorthSounds.STORM_RING, SoundCategory.MASTER);
-            user.addStatusEffect(new StatusEffectInstance(NorthEffects.SCHIZOPHRENIA));
+            user.addStatusEffect(new StatusEffectInstance(NorthEffects.RALLY));
+            user.addStatusEffect(new StatusEffectInstance(NorthEffects.RALLY, 6000, 0));
 
             stack.set(NorthDataComponents.COOLDOWN_TIME, 120);
             return TypedActionResult.success(user.getStackInHand(hand), false);
