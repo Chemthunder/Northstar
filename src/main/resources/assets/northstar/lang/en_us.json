@@ -35,7 +35,7 @@
   "item.northstar.grace": "Grace",
   "death.attack.grace_kill.player": "%1$s beheld the sight of fate, and it was beautiful",
   "death.attack.grace_kill": "%1$s beheld the sight of fate",
-  "item.northstar.grace.desc": "The light of heaven is an inconceivable thing. \nPity nobody will experience true bliss by our hands.",
+  "item.northstar.grace.desc": "The light of heaven is an inconceivable thing. \nPity nobody will experience true bliss by our hands. \n5-minute cooldown between ability uses",
 
   "text.grace.change_weather": "The world arises in a symphony of battle",
   "northstar.subtitles.event.storm_ring": "RING-A-DING MOTHERFUCKER",

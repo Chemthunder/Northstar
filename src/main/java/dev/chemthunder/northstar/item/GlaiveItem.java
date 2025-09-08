@@ -4,6 +4,7 @@ import dev.chemthunder.northstar.init.NorthDamageTypes;
 import net.acoyt.acornlib.api.item.CustomHitParticleItem;
 import net.acoyt.acornlib.api.item.CustomHitSoundItem;
 import net.acoyt.acornlib.api.item.CustomKillSourceItem;
+import net.acoyt.acornlib.api.item.ShieldBreaker;
 import net.acoyt.acornlib.impl.client.particle.SweepParticleEffect;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -18,7 +19,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class GlaiveItem extends SwordItem implements CustomHitParticleItem, CustomHitSoundItem, CustomKillSourceItem {
+public class GlaiveItem extends SwordItem implements CustomHitParticleItem, CustomHitSoundItem, ShieldBreaker {
     public static final SweepParticleEffect[] EFFECTS = new SweepParticleEffect[]{new SweepParticleEffect(0x1c6a91, 0x17465e), new SweepParticleEffect(0xb5e6ff, 0x83cdf2)};
 
     public GlaiveItem(ToolMaterial toolMaterial, Settings settings) {
@@ -57,7 +58,7 @@ public class GlaiveItem extends SwordItem implements CustomHitParticleItem, Cust
     }
 
     @Override
-    public DamageSource getKillSource(LivingEntity livingEntity) {
-        return NorthDamageTypes.glaive_kill(livingEntity);
+    public int shieldCooldown() {
+        return 10;
     }
 }

@@ -104,14 +104,14 @@ public class GraceItem extends SwordItem implements CustomHitParticleItem, Custo
             user.addStatusEffect(new StatusEffectInstance(NorthEffects.RALLY));
             user.addStatusEffect(new StatusEffectInstance(NorthEffects.RALLY, 6000, 0));
 
-            stack.set(NorthDataComponents.COOLDOWN_TIME, 120);
+            stack.set(NorthDataComponents.COOLDOWN_TIME, 6000);
             return TypedActionResult.success(user.getStackInHand(hand), false);
         }
         return TypedActionResult.fail(user.getStackInHand(hand));
     }
 
     public int getItemBarStep(ItemStack stack) {
-        return Math.round((float)stack.getOrDefault(NorthDataComponents.COOLDOWN_TIME, 0) / 120 * 13);
+        return Math.round((float)stack.getOrDefault(NorthDataComponents.COOLDOWN_TIME, 0) / 6000 * 13);
     }
 
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {

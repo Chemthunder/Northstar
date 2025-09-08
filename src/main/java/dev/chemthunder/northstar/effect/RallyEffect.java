@@ -1,6 +1,7 @@
 package dev.chemthunder.northstar.effect;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -8,6 +9,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
+import org.jetbrains.annotations.Nullable;
 
 public class RallyEffect extends StatusEffect {
     public RallyEffect() {
@@ -16,8 +18,13 @@ public class RallyEffect extends StatusEffect {
 
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-
         return super.applyUpdateEffect(entity, amplifier);
+    }
+
+    @Override
+    public void applyInstantEffect(@Nullable Entity source, @Nullable Entity attacker, LivingEntity target, int amplifier, double proximity) {
+        target.heal(50);
+        super.applyInstantEffect(source, attacker, target, amplifier, proximity);
     }
 
     public ParticleEffect createParticle(StatusEffectInstance effect) {
