@@ -57,7 +57,10 @@ public class FlareItem extends Item {
 
             } else if (user.isSneaking()) {
                 user.setVelocity(user.getVelocity().x, 4, user.getVelocity().z);
+
                 user.velocityModified = true;
+
+                user.getItemCooldownManager().set(NorthItems.LUMIUM_SPARK, 15);
             }
         }
             return super.use(world, user, hand);
