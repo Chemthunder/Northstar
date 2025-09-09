@@ -31,7 +31,7 @@ public class FlareItem extends Item {
 
     @Override
     public int getEnchantability() {
-        return 1;
+        return 100;
     }
 
     @Override

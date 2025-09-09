@@ -18,10 +18,16 @@ public class NorthItemTagProvider extends FabricTagProvider<Item> {
 
     public static final TagKey<Item> LUMIUM_ITEMS = TagKey.of(RegistryKeys.ITEM, Identifier.of(Northstar.MOD_ID, "lumium_items"));
 
+    public static final TagKey<Item> GRACE_ITEMS = TagKey.of(RegistryKeys.ITEM, Identifier.of(Northstar.MOD_ID, "grace_items"));
+
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(LUMIUM_ITEMS)
                 .add(NorthItems.LUMIUM_INGOT)
+                .setReplace(true);
+
+        getOrCreateTagBuilder(GRACE_ITEMS)
+                .add(NorthItems.FORBIDDEN_VIAL)
                 .setReplace(true);
     }
 }
