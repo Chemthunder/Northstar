@@ -1,0 +1,8 @@
+{
+  "item": "northstar:steelbound_glaive",
+  "scale": [1.6, 1.6, 1.4],
+  "rotation": [0.0, 0.0, 0.0],
+  "translation": [0.10, -0.75, 0.44],
+  "mode": "HEAD",
+  "sway": 0.5
+}
