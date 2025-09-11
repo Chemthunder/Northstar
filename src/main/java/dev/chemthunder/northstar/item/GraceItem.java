@@ -38,6 +38,11 @@ public class GraceItem extends SwordItem implements CustomHitParticleItem, Custo
     public static final SweepParticleEffect[] EFFECTS = new SweepParticleEffect[]{new SweepParticleEffect(0x92e8c0, 0x4fa4b8), new SweepParticleEffect(0x3a3f5e, 0x4c6885)};
 
 
+    @Override
+    public int getEnchantability() {
+        return 100;
+    }
+
     public void spawnHitParticles(PlayerEntity player) {
         double deltaX = -MathHelper.sin((float) (player.getYaw() * (Math.PI / 180.0F)));
         double deltaZ = MathHelper.cos((float) (player.getYaw() * (Math.PI / 180.0F)));
@@ -120,5 +125,14 @@ public class GraceItem extends SwordItem implements CustomHitParticleItem, Custo
 
     public MutableText getDescription() {
         return Text.translatable(this.getTranslationKey() + ".desc");
+    }
+
+
+    public boolean allowComponentsUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
+        return false;
+    }
+
+    public boolean allowContinuingBlockBreaking(PlayerEntity player, ItemStack oldStack, ItemStack newStack) {
+        return true;
     }
 }

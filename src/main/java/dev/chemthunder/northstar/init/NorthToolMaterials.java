@@ -10,7 +10,7 @@ import net.minecraft.registry.tag.TagKey;
 
 public interface NorthToolMaterials {
 
-    ToolMaterial DIVINE = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 999999, 5, 0.5f, 5, ItemTags.BEACON_PAYMENT_ITEMS);
+    ToolMaterial DIVINE = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, -1, 5, 0.5f, 50, NorthItemTagProvider.GRACE_ITEMS);
 
     ToolMaterial LUMIUM = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 4050, 4, 0.5f, 5, NorthItemTagProvider.LUMIUM_ITEMS);
     private static ToolMaterial create(TagKey<Block> incorrectBlocksForDrops, int durability, float miningSpeed, float attackDamageBonus, int enchantmentValue, TagKey<Item> repairItems) {

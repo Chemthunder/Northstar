@@ -33,8 +33,8 @@
   "item.northstar.forbidden_vial": "Forbidden Vial",
 
   "item.northstar.grace": "Grace",
-  "death.attack.grace_kill.player": "%1$s beheld the sight of fate, and it was beautiful",
-  "death.attack.grace_kill": "%1$s beheld the sight of fate",
+  "death.attack.grace_kill.player": "%1$s's soul was reunited with Heaven",
+  "death.attack.grace_kill": "%1$s's soul was reunited with Heaven",
   "item.northstar.grace.desc": "The light of heaven is an inconceivable thing. \nPity nobody will experience true bliss by our hands. \n5-minute cooldown between ability uses",
 
   "text.grace.change_weather": "The world arises in a symphony of battle",
