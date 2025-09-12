@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "northstar:steelbound_glaive"
+    "northstar:steelbound_glaive",
+    "northstar:grace"
   ]
 }

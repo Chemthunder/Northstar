@@ -11,6 +11,7 @@ public interface NorthDamageTypes {
     RegistryKey<DamageType> STEAMED = of("steamed");
     RegistryKey<DamageType> GRACE_KILL = of("grace_kill");
     RegistryKey<DamageType> GLAIVE_KILL = of("glaive_kill");
+    RegistryKey<DamageType> ENRAPTURED = of("enraptured");
 
     static DamageSource steamed(LivingEntity entity) {
         return entity.getDamageSources().create(STEAMED); }
@@ -20,6 +21,9 @@ public interface NorthDamageTypes {
 
     static DamageSource glaive_kill(LivingEntity entity) {
         return entity.getDamageSources().create(GLAIVE_KILL); }
+
+    static DamageSource enraptured(LivingEntity entity) {
+        return entity.getDamageSources().create(ENRAPTURED); }
 
     private static RegistryKey<DamageType> of(String name) {
         return RegistryKey.of(RegistryKeys.DAMAGE_TYPE, Northstar.id(name));

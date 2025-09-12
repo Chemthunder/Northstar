@@ -74,6 +74,10 @@ public interface NorthItems {
             .jukeboxPlayable(NorthJukeboxSongs.HARBINGER)
     ));
 
+    Item NORTHSTAR_SIMULACRUM = create("northstar_simulacrum", new SimulacrumItem(new AcornItemSettings()
+            .maxCount(1)
+    ));
+
     static void init() {
         ITEMS.keySet().forEach(item -> Registry.register(Registries.ITEM, ITEMS.get(item), item));
 
@@ -85,6 +89,7 @@ public interface NorthItems {
         modifyItemNameColor(ENSCULKED_LUMIUM, 0x00ffd9);
         modifyItemNameColor(LUMIUM_INGOT, 0x598ac9);
         modifyItemNameColor(HARBINGER_DISC, 0x598ac9);
+        modifyItemNameColor(NORTHSTAR_SIMULACRUM, 0x5861a1);
     }
 
     private static Item create(String name, Item item) {

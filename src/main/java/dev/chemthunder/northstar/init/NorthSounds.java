@@ -15,11 +15,10 @@ public interface NorthSounds {
     SoundEvent TERRAFORMAL = create("music.terraformal");
     SoundEvent BUTCHERVANITYOVERCOOKED = create("music.bvo");
     SoundEvent BIGSHOT = create("music.bigshot");
-
     SoundEvent SPARK_LOAD = create("item.spark_load");
-
     SoundEvent STORM_RING = create("event.storm_ring");
     SoundEvent HARBINGER = create("music.harbinger");
+    SoundEvent HARBINGER_SUMMON = create("event.harbinger_summon");
 
     private static SoundEvent create(String name) {
         SoundEvent soundEvent = SoundEvent.of(Northstar.id(name));

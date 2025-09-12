@@ -1,6 +1,7 @@
 {
   "replace": true,
   "values": [
-    "northstar:forbidden_vial"
+    "northstar:forbidden_vial",
+    "northstar:lumium_ingot"
   ]
 }

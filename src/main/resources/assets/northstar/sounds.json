@@ -36,5 +36,12 @@
       "northstar:event/storm_ring"
     ],
     "subtitle": "northstar.subtitles.event.storm_ring"
+  },
+
+  "event.harbinger_summon": {
+    "sounds": [
+      "northstar:event/harbinger_summon"
+    ],
+    "subtitle": "northstar.subtitles.event.harbinger_summon"
   }
 }

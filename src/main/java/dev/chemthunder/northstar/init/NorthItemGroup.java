@@ -35,5 +35,6 @@ public interface NorthItemGroup {
         itemGroup.add(NorthItems.GRACE);
         itemGroup.add(NorthItems.ENSCULKED_LUMIUM);
         itemGroup.add(NorthItems.AMETHYSTINE_LUMIUM);
+        itemGroup.add(NorthItems.NORTHSTAR_SIMULACRUM);
     }
 }
