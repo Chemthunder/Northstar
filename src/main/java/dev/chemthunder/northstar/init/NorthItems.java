@@ -3,7 +3,6 @@ package dev.chemthunder.northstar.init;
 import dev.chemthunder.northstar.Northstar;
 import dev.chemthunder.northstar.item.*;
 import net.acoyt.acornlib.api.item.AcornItemSettings;
-import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
 import net.minecraft.registry.Registries;
