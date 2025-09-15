@@ -1,5 +1,7 @@
 package dev.chemthunder.northstar.item;
 
+import dev.chemthunder.northstar.cca.HarbingerComponent;
+import dev.chemthunder.northstar.cca.NorthComponents;
 import dev.chemthunder.northstar.init.NorthDamageTypes;
 import dev.chemthunder.northstar.init.NorthSounds;
 import net.acoyt.acornlib.api.item.AdvBurningItem;
@@ -47,14 +49,31 @@ public class SimulacrumItem extends Item {
             serverWorld.spawnParticles(ParticleTypes.SOUL_FIRE_FLAME, entity.getX(), entity.getY() + 0.5, entity.getZ(), 75, 0.05, 1, 0.05, 0.2);
             serverWorld.playSound(entity, pos, SoundEvents.BLOCK_TRIAL_SPAWNER_BREAK, SoundCategory.MASTER, 1, 0);
         }
+
+        if (!world.isClient) {
+            HarbingerComponent component = HarbingerComponent.KEY.get(owner);
+            boolean newState = !component.isActive();
+            component.setActive(newState);
+        }
         super.onItemEntityDestroyed(entity);
     }
 
 
 
+
+
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-user.damage(NorthDamageTypes.enraptured(user), 5f);
+        user.damage(NorthDamageTypes.enraptured(user), 5f);
+        ItemStack offStack = user.getOffHandStack();
+        if (offStack.isOf(this)) {
+            if (!world.isClient) {
+                HarbingerComponent component = HarbingerComponent.KEY.get(user);
+                boolean newState = !component.isActive();
+                component.setActive(newState);
+            }
+        }
+
         return super.use(world, user, hand);
     }
 }

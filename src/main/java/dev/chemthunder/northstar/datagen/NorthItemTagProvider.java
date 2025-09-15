@@ -1,6 +1,7 @@
-package dev.chemthunder.northstar.init;
+package dev.chemthunder.northstar.datagen;
 
 import dev.chemthunder.northstar.Northstar;
+import dev.chemthunder.northstar.init.NorthItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;

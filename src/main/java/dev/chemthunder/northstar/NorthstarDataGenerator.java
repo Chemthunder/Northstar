@@ -1,6 +1,6 @@
 package dev.chemthunder.northstar;
 
-import dev.chemthunder.northstar.init.NorthItemTagProvider;
+import dev.chemthunder.northstar.datagen.NorthItemTagProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 

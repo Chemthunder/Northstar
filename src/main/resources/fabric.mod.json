@@ -3,18 +3,16 @@
   "id": "northstar",
   "version": "${version}",
   "name": "Northstar",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "The Minecraft equivalent of finding a spider in my shower",
   "authors": [
+    "The Old Faith",
     "Chemthunder: (Developer)"
   ],
   "contributors": [
     "AcoYT (General code help and textures)",
-    "Homak (Textures)"
+    "Homak (Textures)",
+    "DexFlex_YT (Textures)"
   ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
   "license": "Chemthunder License",
   "icon": "assets/northstar/icon.png",
   "environment": "*",
@@ -24,6 +22,9 @@
     ],
     "fabric-datagen": [
       "dev.chemthunder.northstar.NorthstarDataGenerator"
+    ],
+    "cardinal-components": [
+      "dev.chemthunder.northstar.cca.NorthComponents"
     ]
   },
   "mixins": [
@@ -35,7 +36,9 @@
     "java": ">=21",
     "fabric-api": "*"
   },
-  "suggests": {
-    "another-mod": "*"
+  "custom": {
+    "cardinal-components": [
+      "northstar:harbinger"
+    ]
   }
 }
