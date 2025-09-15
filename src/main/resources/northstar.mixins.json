@@ -3,12 +3,12 @@
   "package": "dev.chemthunder.northstar.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ItemStackMixin",
-    "ArmorFeatureRendererMixin",
-    "PlayerListHudMixin"
+    "ItemStackMixin"
   ],
   "client": [
-    "InGameHudMixin"
+    "InGameHudMixin",
+    "ArmorFeatureRendererMixin",
+    "PlayerListHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1
