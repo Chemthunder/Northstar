@@ -1,0 +1,12 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "northstar:item/oculus_flos_gui"
+  },
+  "overrides": [
+    {
+      "predicate": { "is_held": 1.0 },
+      "model": "northstar:item/oculos_flos_handheld"
+    }
+  ]
+}

@@ -52,5 +52,7 @@
 
   "item.northstar.northstar_simulacrum": "Northstar Simulacrum",
   "text.simulacrum.destroy": "Harbinger joined the game",
-  "text.simulacrum.user": "YOU FEEL THE EYES BLOSSOM"
+  "text.simulacrum.user": "YOU FEEL THE EYES BLOSSOM",
+
+  "item.northstar.oculos_flos": "Oculos Flos"
 }

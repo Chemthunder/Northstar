@@ -1,0 +1,8 @@
+{
+  "item": "northstar:oculos_flos",
+  "scale": [1.0, 1.0, 1.0],
+  "rotation": [90.0, -35.0, 90.0],
+  "translation": [-0.2, -0.4, 0.1],
+  "mode": "THIRD_PERSON_RIGHT_HAND",
+  "sway": 0.6
+}

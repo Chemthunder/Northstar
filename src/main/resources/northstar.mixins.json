@@ -6,9 +6,7 @@
     "ItemStackMixin"
   ],
   "client": [
-    "InGameHudMixin",
-    "ArmorFeatureRendererMixin",
-    "PlayerListHudMixin"
+    "InGameHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

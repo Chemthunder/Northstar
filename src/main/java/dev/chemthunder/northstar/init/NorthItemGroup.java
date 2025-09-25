@@ -36,5 +36,6 @@ public interface NorthItemGroup {
         itemGroup.add(NorthItems.ENSCULKED_LUMIUM);
         itemGroup.add(NorthItems.AMETHYSTINE_LUMIUM);
         itemGroup.add(NorthItems.NORTHSTAR_SIMULACRUM);
+        itemGroup.add(NorthItems.OCULOS_FLOS);
     }
 }

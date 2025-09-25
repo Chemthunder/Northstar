@@ -9,6 +9,6 @@ public class NorthComponents implements EntityComponentInitializer {
     @Override
     public void registerEntityComponentFactories(EntityComponentFactoryRegistry registry) {
       //  registry.beginRegistration(PlayerEntity.class, JetpackComponent.KEY).respawnStrategy(RespawnCopyStrategy.NEVER_COPY).end(JetpackComponent::new);
-        registry.beginRegistration(PlayerEntity.class, HarbingerComponent.KEY).respawnStrategy(RespawnCopyStrategy.ALWAYS_COPY).end(HarbingerComponent::new);
+       // registry.beginRegistration(PlayerEntity.class, HarbingerComponent.KEY).respawnStrategy(RespawnCopyStrategy.ALWAYS_COPY).end(HarbingerComponent::new);
     }
 }

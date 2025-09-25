@@ -3,8 +3,14 @@ package dev.chemthunder.northstar.init;
 import dev.chemthunder.northstar.Northstar;
 import dev.chemthunder.northstar.item.*;
 import net.acoyt.acornlib.api.item.AcornItemSettings;
+import net.acoyt.acornlib.api.item.CustomHitParticleItem;
+import net.acoyt.acornlib.impl.AcornLib;
+import net.acoyt.acornlib.impl.init.AcornParticles;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.ToolMaterials;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -77,6 +83,14 @@ public interface NorthItems {
             .maxCount(1)
     ));
 
+    Item OCULOS_FLOS = create("oculos_flos", new OculosFlosItem(ToolMaterials.NETHERITE, new AcornItemSettings()
+
+            .fireproof()
+            .maxCount(1)
+
+            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 5, -2.8f))
+    ));
+
     static void init() {
         ITEMS.keySet().forEach(item -> Registry.register(Registries.ITEM, ITEMS.get(item), item));
 
@@ -89,6 +103,7 @@ public interface NorthItems {
         modifyItemNameColor(LUMIUM_INGOT, 0x598ac9);
         modifyItemNameColor(HARBINGER_DISC, 0x598ac9);
         modifyItemNameColor(NORTHSTAR_SIMULACRUM, 0x5861a1);
+        modifyItemNameColor(OCULOS_FLOS, 0x35204b);
     }
 
     private static Item create(String name, Item item) {
